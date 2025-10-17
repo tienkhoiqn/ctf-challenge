@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(8000, () => {
+server.listen(80, () => {
     console.log('Exploit server running on http://localhost:8000');
     console.log('Waiting for requests to /script.js...');
 });
