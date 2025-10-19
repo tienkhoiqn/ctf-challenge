@@ -10,6 +10,12 @@ const server = http.createServer((req, res) => {
         });
         res.end(`alert('Wizer')`);
         console.log('  -> Served malicious script.js');
+    } else if (req.url === '/direct') {
+        res.writeHead(200, {
+            'Content-Type': 'text/html',
+            'Access-Control-Allow-Origin': '*'
+        });
+        res.end(`<script>alert('Wizer')</script>`);
     } else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Not Found');
